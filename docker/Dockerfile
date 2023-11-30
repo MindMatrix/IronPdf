@@ -10,4 +10,8 @@ COPY fonts/ /usr/share/fonts/
 # Change the permissions of the fonts to be accessible
 RUN chmod 644 /usr/share/fonts/*
 
+# RUN echo "fontconfig fontconfig/enable_bitmaps boolean true" | debconf-set-selections
+# RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure fontconfig fontconfig-config
+
 RUN fc-cache -fv
+
