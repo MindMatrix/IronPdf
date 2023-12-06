@@ -16,5 +16,7 @@ IronPdf.Installation.SkipInitialization = true;
 IronPdf.Installation.AutomaticallyDownloadNativeBinaries = false;
 
 ChromePdfRenderer renderer = new ChromePdfRenderer();
-PdfDocument pdf = renderer.RenderHtmlAsPdf("<span style=\"font-family: 'Courier'\">THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG<span>");
+PdfDocument pdf = renderer.RenderHtmlAsPdf($"<span>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG<span><br>" +
+                                           $"<span style=\"font-family: 'Cascadia Mono SemiBold'\">THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG<span><br>" +
+                                           $"<span style=\"font-family: 'Cascadia Mono'\">THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG<span>");
 pdf.SaveAs("ironpdf.pdf");
